@@ -1,6 +1,6 @@
 import React from 'react'
 import Slider from 'react-slick';
-const EntertainmentCard = () => {
+const EntertainmentCard = (props) => {
   return (
     <>
       <div className="w-full h-30 px-2">
@@ -52,8 +52,8 @@ const EntertainmentCardSlider =()=>{
     <>
     <Slider {...settings}>
       {
-        EntertainmentImage.map((image)=>(
-          <EntertainmentCard src={image}/>
+        EntertainmentImage.map((image,index)=>(
+          <EntertainmentCard src={image} key={index}/>
         ))
       }
     </Slider>
