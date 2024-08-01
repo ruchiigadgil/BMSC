@@ -7,13 +7,13 @@ import Slider from 'react-slick';
 import {FaCcVisa, FaCcApplePay} from 'react-icons/fa';
 import PosterSlider from '../components/PosterSlider/PosterSlider.Component';
 import MovieHero from '../components/MovieHero/MovieHero.Component';
-
+import Cast from "../components/Cast/Cast.Component";
 
 export const MoviePage = () => {
   const {id} = useParams();
 
   const {movie,setMovie} = useContext(MovieContext)
-  const [cast,setCast] =useState();
+  const [cast,setCast] =useState([]);
   const [SimilarMovies, setSimilarMovies]=useState([]);
 const [recommendedMovies, setRecommendedMovies] = useState([]);
 
@@ -105,7 +105,7 @@ const settingsCast = {
 
   return (
     <>
-      <MovieHero/>
+      <MovieHero />
       <div className="my-12 container px-4 lg:w-2/1">
         <div className="flex flex-col items-start gap-3">
           <h1 className="text-gray-800 font-bold gap-3">About The Movie</h1>
@@ -154,7 +154,15 @@ const settingsCast = {
           <hr />
         </div>
 
-        <div className="my-8">{/* Cast and Crew */}</div>
+        <div className="my-8">
+          {/* Cast and Crew */}
+          <h2 className="text-gray-800 font-bold text-2xl mb-4">
+            Cast and Crew
+          </h2>
+          <Slider {...settingsCast}>
+            {cast}
+          </Slider>
+        </div>
 
         <div className="my-8">
           <hr />
