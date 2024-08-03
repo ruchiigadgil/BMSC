@@ -60,29 +60,40 @@ const HomePage = () => {
        />
      </div>
 
-     <div className="bg-premier-800 py-12 ">
-       <div className="container mx-auto px-4 md:px-12 my-8 flex flex-col gap-3">
-         <div className="hidden md:flex bg-premier-800">
-           <img
-             src="https://in.bmscdn.com/discovery-catalog/collections/tr:w-1440,h-120/premiere-rupay-banner-web-collection-202104230555.png"
-             alt="rupay"
-             className="w-full h-full"
-           />
-         </div>
-         <PosterSlider
-           title="Premiers"
-           subtitle="Brand new release every Friday"
-           posters={premierMovies}
-           isDark={true}
-         />
+     <div className="py-12">
+       {/* Dark background section for Premier Movies */}
+       <div
+         className="bg-premier-800"
+         style={{
+           backgroundImage:
+             "linear-gradient(90deg,rgba(43,49,73,255) 100%, rgba(43,49,73,255) 100%, rgba(43,49,73, 0.04) 100%, rgba(43,49,73,255) 100%)",
+         }}
+       >
          <div className="container mx-auto px-4 md:px-12 my-8 flex flex-col gap-3">
+           <div className="hidden md:flex bg-premier-800">
+             <img
+               src="https://in.bmscdn.com/discovery-catalog/collections/tr:w-1440,h-120/premiere-rupay-banner-web-collection-202104230555.png"
+               alt="rupay"
+               className="w-full h-full"
+             />
+           </div>
            <PosterSlider
-             title="Online Streaming Events"
-             subtitle="Online Streaming Events"
-             posters={OnlineStreamEvents}
-             isDark={false}
+             title="Premiers"
+             subtitle="Brand new release every Friday"
+             posters={premierMovies}
+             isDark={true}
            />
          </div>
+       </div>
+
+       {/* Light background section for Online Streaming Events */}
+       <div className="container mx-auto px-4 md:px-12 my-8 flex flex-col gap-3">
+         <PosterSlider
+           title="Online Streaming Events"
+           subtitle="Online Streaming Events"
+           posters={OnlineStreamEvents}
+           isDark={false}
+         />
        </div>
      </div>
    </>

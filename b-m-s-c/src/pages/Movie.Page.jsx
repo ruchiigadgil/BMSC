@@ -160,7 +160,9 @@ const settingsCast = {
             Cast and Crew
           </h2>
           <Slider {...settingsCast}>
-            {cast}
+            {cast.map((castData)=>(
+              <Cast image={castData.profile_path} castName={castData.original_name} role={castData.character}/>
+            ))}
           </Slider>
         </div>
 
